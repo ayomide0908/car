@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Car Website</title>
+  <title>Jimtex Automobiles</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/png" href="./icon.png" >
+
   <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://kit.fontawesome.com/98fce21c87.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div id="progress-bar"></div>
+
     <!-- Navigation -->
   <header>
     <nav class="navbar">
@@ -45,7 +49,7 @@
   </section>
 <!-- why choose -->
   <section class="why-choose">
-  <h2>Why Choose Apex Autos</h2>
+  <h2>Why Choose Jimtex Automobiles</h2>
   <p class="subtitle">Commitment to excellence in every detail</p>
 
   <div class="features">
@@ -213,5 +217,14 @@
     </footer>
 
   <script src="script.js"></script>
+  <script>
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY; // how far scrolled
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+
+    document.getElementById("progress-bar").style.width = scrollPercent + "%";
+  });
+</script>
 </body>
 </html>

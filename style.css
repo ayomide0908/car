@@ -14,6 +14,17 @@
 *{ margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 
 body { line-height: 1.6;  background: #fff; margin: 0;}
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #E6610F, #FFD700); /* Orange to Yellow */
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.25s ease-out;
+}
+
 
 .logo {
   filter: brightness(0) invert(1);
@@ -108,6 +119,7 @@ body { line-height: 1.6;  background: #fff; margin: 0;}
 .btn:hover {
   background: #f1f1f1;
   color: #000;
+  scale: 1.1;
 }
 
 /* Hero Section */
@@ -148,6 +160,11 @@ body { line-height: 1.6;  background: #fff; margin: 0;}
   line-height: 1.2;
   margin-bottom: 1.5rem;
   font-family: 'poppins', sans-serif;
+    font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #fff; /* white for contrast on dark bg */
 }
 
 .description {
@@ -169,13 +186,6 @@ body { line-height: 1.6;  background: #fff; margin: 0;}
   text-transform: uppercase;
 }
 
-.hero-content h1 {
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  color: #fff; /* white for contrast on dark bg */
-}
 .span{
   color: #ffb800; /* orange highlight */
 }
@@ -191,7 +201,30 @@ body { line-height: 1.6;  background: #fff; margin: 0;}
 .buttons {
   display: flex;
   gap: 1rem;
+  margin-top: 2rem;
 }
+
+.buttons a {
+  display: inline-block;
+  border-radius: 6px;
+  font-weight: bold;
+
+  opacity: 0; /* hide initially */
+  transform: translateX(100px); /* shifted right */
+  transition: transform 0.8s ease, opacity 0.3s ease scale 0.4s ease;
+}
+
+/* Active class when visible */
+.buttons.show a {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.buttons.show a:nth-child(2) {
+  transition-delay:  0.6s; /* stagger effect */
+}
+
+
 
 .btn-primary {
    background: #ffb800;
@@ -200,27 +233,31 @@ body { line-height: 1.6;  background: #fff; margin: 0;}
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .btn-primary:hover {
   background: #eaeaea;
   color: #000;
+  scale: 1.1;
+  
 }
 
 .btn-secondary {
   border: 2px solid #fff;
   color: #fff;
-  padding: 0.8rem 1.5rem;
+padding: 0.8rem 1.8rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
+  transition: 0.3s ease;
+
 }
 
 .btn-secondary:hover {
   background: #fff;
   color: #000;
+  scale: 1.1;
 }
 
 /* Section Styling */
@@ -232,7 +269,8 @@ body { line-height: 1.6;  background: #fff; margin: 0;}
 
 .why-choose h2 {
   font-size: 2rem;
-  font-weight: 700;
+  font-family: 'poppins', sans-serif;
+  font-weight: bolder;
   color: #0a1a3c;
   margin-bottom: 10px;
 }
@@ -254,7 +292,7 @@ body { line-height: 1.6;  background: #fff; margin: 0;}
 
 /* Feature Card */
 .feature-card {
-  background: #f9f9f9;
+  background: #ece7e7;
   padding: 25px 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -263,6 +301,8 @@ body { line-height: 1.6;  background: #fff; margin: 0;}
 
 .feature-card:hover {
   transform: translateY(-5px);
+  scale: 1.1;
+    background: #9c9c9c;
 }
 
 /* Icon Styling */
@@ -367,6 +407,7 @@ body { line-height: 1.6;  background: #fff; margin: 0;}
   overflow: hidden;
   opacity: 0;               /* animation start */
   transform: translateY(30px); /* animation start */
+    transition: scale 0.5s ease;
 }
 
 .service:before {
@@ -385,11 +426,13 @@ body { line-height: 1.6;  background: #fff; margin: 0;}
 .service:hover:before {
   transform: scaleY(1);
   transform-origin: top;
+    scale: 1.1;
 }
 
 .service:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    scale: 1.1;
 }
 
 .service i {
