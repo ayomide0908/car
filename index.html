@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Car Website</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://kit.fontawesome.com/98fce21c87.js" crossorigin="anonymous"></script>
@@ -16,13 +17,13 @@
       <div class="logo"><img src="./jimtex.png" alt="" width="23%"></div>
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Villas</a></li>
-        <li><a href="#">Destinations</a></li>
-        <li><a href="#">Gallery</a></li>
-          <li><a href="#">Gallery</a></li>
+        <li><a href="#">Inventory</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact us</a></li>
 
       </ul>
-      <a href="#" class="btn">Book a demo</a>
+      <a href="#" class="btn"> Schedule a Test Drive </a>
     </nav>
   </header>
 
@@ -30,15 +31,15 @@
   <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-      <p class="sub-text">Experienced by thousands of people</p>
-      <h1>Where every stay<br>becomes a memory</h1>
+      <p class="sub-text">Reliable Car Deals, Backed by Experience.</p>
+      <h1>Your One-Stop Hub <br><span class="span"> for Cars & Trucks <i class="fas fa-truck"></i></span></h1>
       <p class="description">
-        We combine strategy, design, and technology to help startups grow with impact. 
-        Together, we create digital experiences that truly stand out.
+       We specialize in the sale of quality cars and trucks — both new and used. From instant cash offers for your old car to seamless vehicle transfers and shipping 
+       services, we make every step simple, fast, and reliable.
       </p>
       <div class="buttons">
-        <a href="#" class="btn-primary">Book your stay</a>
-        <a href="#" class="btn-secondary">Explore villas</a>
+        <a href="#contact" class="btn-primary">Get In Touch</a>
+        <a href="#home" class="btn-secondary">Browse Inventory</a>
       </div>
     </div>
   </section>
@@ -70,6 +71,46 @@
       <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
       <h3>Performance Guarantee</h3>
       <p>Verified vehicle history and performance metrics</p>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+  <div class="container">
+    <div class="section-title">
+      <h2 class="fade-in-up">Our Services</h2>
+    </div>
+    <div class="services-container">
+      
+      <!-- Service 1 -->
+      <div class="service fade-in-up" >
+        <i class="fas fa-car"></i>
+        <h3>Selling of Cars</h3>
+        <p>Wide selection of quality cars and trucks — both brand new and pre-owned, at unbeatable prices.</p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service fade-in-up">
+        <i class="fas fa-exchange-alt"></i>
+        <h3>Purchase & Sale of Used Cars</h3>
+        <p>Buy reliable used vehicles or sell your car with a smooth, transparent process.</p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service fade-in-up">
+        <i class="fas fa-shipping-fast"></i>
+        <h3>Vehicle Transfer & Shipping</h3>
+        <p>Seamless vehicle transfer and shipping service, making relocation stress-free and secure.</p>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service fade-in-up">
+        <i class="fas fa-money-bill-wave"></i>
+        <h3>Instant Cash for Your Car</h3>
+        <p>Get fast cash offers for your used car — simple, quick, and reliable.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -144,18 +185,33 @@
     </form>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <p>&copy; 2025 CarZone. All rights reserved.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="logo">Dev<span>Portfolio</span></a>
+                <p>Creating digital experiences that users love and businesses need</p>
+                
+                <ul class="footer-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+                <p class="copyright">© 2023 Developer Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
