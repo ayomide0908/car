@@ -31,3 +31,10 @@
     buttonObserver.observe(buttons);
   });
 
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY; // how far scrolled
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+
+    document.getElementById("progress-bar").style.width = scrollPercent + "%";
+  });
