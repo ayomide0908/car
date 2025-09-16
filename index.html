@@ -1,380 +1,670 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jimtex Automobiles</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="icon" type="image/png" href="./icon.png" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jimtex Automobiles</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="icon" type="image/png" href="./icon.png" />
 
-  <!-- Font Awesome for social icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-</head>
-<body>
-  <div id="progress-bar"></div>
+    <!-- Font Awesome for social icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="progress-bar"></div>
 
     <!-- Navigation -->
-  <header>
-    <nav class="navbar">
-      <div class="logo"><img src="./jimtex.png" alt="" width="23%"></div>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Inventory</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#services">Services</a></li>
+    <header>
+      <nav class="navbar">
+        <div class="logo"><img src="./jimtex.png" alt="" width="23%" /></div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#">Inventory</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About us</a></li>
           <li><a href="#contact">Contact us</a></li>
+        </ul>
+        <a href="#contact" class="btn"
+          ><i class="fa-solid fa-calendar-days"></i> Schedule a Test Drive
+        </a>
+      </nav>
+    </header>
 
-      </ul>
-      <a href="#contact" class="btn"><i class="fa-solid fa-calendar-days"></i> Schedule a Test Drive </a>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <p class="sub-text">Reliable Car Deals, Backed by Experience.</p>
-      <h1>Your One-Stop Hub <br><span class="span"> for Cars & Trucks <i class="fas fa-truck"></i></span></h1>
-      <p class="description">
-       We specialize in the sale of quality cars and trucks — both new and used. From instant cash offers for your old car to seamless vehicle transfers and shipping 
-       services, we make every step simple, fast, and reliable.
-      </p>
-      <div class="buttons">
-        <a href="#contact" class="btn-primary"> <i class="fa-solid fa-calendar-days"></i> Get In Touch</a>
-        <a href="#home" class="btn-secondary">Browse Inventory <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-      </div>
-    </div>
-  </section>
-<!-- why choose -->
-  <section class="why-choose">
-  <h2>Why Choose Jimtex Automobiles</h2>
-  <p class="subtitle">Commitment to excellence in every detail</p>
-
-  <div class="features">
-    <div class="feature-card">
-      <div class="icon"><i class="fas fa-certificate"></i></div>
-      <h3>Certified Quality</h3>
-      <p>Every vehicle undergoes rigorous 200-point inspection</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
-      <h3>Flexible Financing</h3>
-      <p>Tailored payment plans with competitive rates</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="icon"><i class="fas fa-shield-alt"></i></div>
-      <h3>Extended Warranty</h3>
-      <p>Comprehensive coverage up to 7 years</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
-      <h3>Performance Guarantee</h3>
-      <p>Verified vehicle history and performance metrics</p>
-    </div>
-  </div>
-</section>
-
-<!-- Services Section -->
-<section id="services">
-  <div class="container">
-    <div class="section-title">
-      <h2 class="fade-in-up">Our Services</h2>
-    </div>
-    <div class="services-container">
-      
-      <!-- Service 1 -->
-      <div class="service fade-in-up" >
-        <i class="fas fa-car"></i>
-        <h3>Selling of Cars</h3>
-        <p>Wide selection of quality cars and trucks — both brand new and pre-owned, at unbeatable prices.</p>
-      </div>
-
-      <!-- Service 2 -->
-      <div class="service fade-in-up">
-        <i class="fas fa-exchange-alt"></i>
-        <h3>Purchase & Sale of Used Cars</h3>
-        <p>Buy reliable used vehicles or sell your car with a smooth, transparent process.</p>
-      </div>
-
-      <!-- Service 3 -->
-      <div class="service fade-in-up">
-        <i class="fas fa-shipping-fast"></i>
-        <h3>Vehicle Transfer & Shipping</h3>
-        <p>Seamless vehicle transfer and shipping service, making relocation stress-free and secure.</p>
-      </div>
-
-      <!-- Service 4 -->
-      <div class="service fade-in-up">
-        <i class="fas fa-money-bill-wave"></i>
-        <h3>Instant Cash for Your Car</h3>
-        <p>Get fast cash offers for your used car — simple, quick, and reliable.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
- <!-- About Us -->
-<section id="about">
-  <div class="about-container">
-    <div class="about-image">
-      <img src="./jimtex.png" alt="About Jimtex Automobile">
-    </div>
-
-    <div class="about-text">
-      <h2>About Us</h2>
-      <p class="tagline">Driven by Trust, Powered by Experience</p>
-      <p>
-        At <strong>Jimtex Automobile</strong>, we specialize in providing top-quality cars and trucks — 
-        both new and used. Whether you’re buying, selling, or looking for 
-        seamless vehicle transfer and shipping services, our mission is to 
-        make your experience smooth, reliable, and rewarding.
-      </p>
-      <p>
-        With years of expertise and a trusted reputation, we don’t just 
-        sell cars — we build relationships, ensuring you drive away 
-        with confidence and peace of mind.
-      </p>
-      <a href="#contact" class="btn-primary"> <i class="fa-solid fa-calendar-days"></i> Schedule a Test Drive</a>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials Section -->
-<section class="testimonials">
-  <h2>What Our Customers Say</h2>
-  <div class="underline"></div>
-  <p class="subtitle">Trusted globally</p>
-
-  <div class="testimonial-wrapper">
-    <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
-    
-    <div class="testimonial-slider">
-      <!-- Testimonial 1 -->
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "Jimtex fixed my car’s engine perfectly. Excellent service and affordable price!"
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <p class="sub-text">Reliable Car Deals, Backed by Experience.</p>
+        <h1>
+          Your One-Stop Hub <br /><span class="span">
+            for Cars & Trucks <i class="fas fa-truck"></i
+          ></span>
+        </h1>
+        <p class="description">
+          We specialize in the sale of quality cars and trucks — both new and
+          used. From instant cash offers for your old car to seamless vehicle
+          transfers and shipping services, we make every step simple, fast, and
+          reliable.
         </p>
-        <div class="profile">
-          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=60&h=60&fit=crop" alt="Customer 1">
-          <div class="profile-info">
-            <h4>Johann Müller</h4>
-            <div class="stars">★★★★★</div>
+        <div class="buttons">
+          <a href="#contact" class="btn-primary">
+            <i class="fa-solid fa-calendar-days"></i> Get In Touch</a
+          >
+          <a href="#home" class="btn-secondary"
+            >Browse Inventory <i class="fa-solid fa-arrow-right-to-bracket"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hero = document.querySelector(".hero-content");
+        if (!hero) return;
+
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                hero.classList.add("in-view"); // element entered viewport -> animate in
+              } else {
+                hero.classList.remove("in-view"); // element left viewport -> reset so it can animate again
+              }
+            });
+          },
+          {
+            threshold: 0.25, // adjust visibility threshold (0.25 = 25% visible)
+          }
+        );
+
+        io.observe(hero);
+      });
+    </script>
+
+    <!-- why choose -->
+    <section class="why-choose">
+      <h2>Why Choose Jimtex Automobiles</h2>
+      <p class="subtitle">Commitment to excellence in every detail</p>
+
+      <div class="features">
+        <div class="feature-card">
+          <div class="icon"><i class="fas fa-certificate"></i></div>
+          <h3>Certified Quality</h3>
+          <p>Every vehicle undergoes rigorous 200-point inspection</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
+          <h3>Flexible Financing</h3>
+          <p>Tailored payment plans with competitive rates</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Extended Warranty</h3>
+          <p>Comprehensive coverage up to 7 years</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
+          <h3>Performance Guarantee</h3>
+          <p>Verified vehicle history and performance metrics</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="fade-in-up">Our Services</h2>
+        </div>
+        <div class="services-container">
+          <!-- Service 1 -->
+          <div class="service fade-in-up">
+            <i class="fas fa-car"></i>
+            <h3>Selling of Cars</h3>
+            <p>
+              Wide selection of quality cars and trucks — both brand new and
+              pre-owned, at unbeatable prices.
+            </p>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service fade-in-up">
+            <i class="fas fa-exchange-alt"></i>
+            <h3>Purchase & Sale of Used Cars</h3>
+            <p>
+              Buy reliable used vehicles or sell your car with a smooth,
+              transparent process.
+            </p>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service fade-in-up">
+            <i class="fas fa-shipping-fast"></i>
+            <h3>Vehicle Transfer & Shipping</h3>
+            <p>
+              Seamless vehicle transfer and shipping service, making relocation
+              stress-free and secure.
+            </p>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service fade-in-up">
+            <i class="fas fa-money-bill-wave"></i>
+            <h3>Instant Cash for Your Car</h3>
+            <p>
+              Get fast cash offers for your used car — simple, quick, and
+              reliable.
+            </p>
           </div>
         </div>
       </div>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".hero-content, #services");
 
-      <!-- Testimonial 2 (Female) -->
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "Professional and reliable. I always take my car here for repairs."
-        </p>
-        <div class="profile">
-          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=60&h=60&fit=crop" alt="Customer 2">
-          <div class="profile-info">
-            <h4>Klara Schneider</h4>
-            <div class="stars">★★★★★</div>
-          </div>
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+              } else {
+                entry.target.classList.remove("in-view"); // allows replay
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        sections.forEach((el) => io.observe(el));
+      });
+    </script>
+
+    <!-- About Us -->
+    <section id="about">
+      <div class="about-container">
+        <div class="about-image reveal-left">
+          <img src="./jimtex.png" alt="About Jimtex Automobile" />
+        </div>
+
+        <div class="about-text reveal-right">
+          <h2>About Us</h2>
+          <p class="tagline">Driven by Trust, Powered by Experience</p>
+          <p>
+            At <strong>Jimtex Automobile</strong>, we specialize in providing
+            top-quality cars and trucks — both new and used. Whether you’re
+            buying, selling, or looking for seamless vehicle transfer and
+            shipping services, our mission is to make your experience smooth,
+            reliable, and rewarding.
+          </p>
+          <p>
+            With years of expertise and a trusted reputation, we don’t just sell
+            cars — we build relationships, ensuring you drive away with
+            confidence and peace of mind.
+          </p>
+          <a href="#contact" class="btn-primary">
+            <i class="fa-solid fa-calendar-days"></i> Schedule a Test Drive
+          </a>
         </div>
       </div>
+    </section>
 
-      <!-- Testimonial 3 -->
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "Great customer service and they delivered on time. Highly recommended!"
-        </p>
-        <div class="profile">
-          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=60&h=60&fit=crop" alt="Customer 3">
-          <div class="profile-info">
-            <h4>Friedrich Becker</h4>
-            <div class="stars">★★★★★</div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(
+          ".reveal-left, .reveal-right"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+              } else {
+                entry.target.classList.remove("active"); // 🔥 allow replay when scrolling up
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        elements.forEach((el) => observer.observe(el));
+      });
+    </script>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <h2>What Our Customers Say</h2>
+      <div class="underline"></div>
+      <p class="subtitle">Trusted globally</p>
+
+      <div class="testimonial-wrapper">
+        <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+
+        <div class="testimonial-slider">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "Jimtex fixed my car’s engine perfectly. Excellent service and
+              affordable price!"
+            </p>
+            <div class="profile">
+              <img
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=60&h=60&fit=crop"
+                alt="Customer 1"
+              />
+              <div class="profile-info">
+                <h4>Johann Müller</h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 (Female) -->
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "Professional and reliable. I always take my car here for
+              repairs."
+            </p>
+            <div class="profile">
+              <img
+                src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=60&h=60&fit=crop"
+                alt="Customer 2"
+              />
+              <div class="profile-info">
+                <h4>Klara Schneider</h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "Great customer service and they delivered on time. Highly
+              recommended!"
+            </p>
+            <div class="profile">
+              <img
+                src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=60&h=60&fit=crop"
+                alt="Customer 3"
+              />
+              <div class="profile-info">
+                <h4>Friedrich Becker</h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 4 (Female) -->
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "They really know their job. My car has been running smoothly
+              since I brought it here."
+            </p>
+            <div class="profile">
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&h=60&fit=crop"
+                alt="Customer 4"
+              />
+              <div class="profile-info">
+                <h4>Greta Hoffmann</h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "Honest, quick, and very skilled. I trust Jimtex with all my
+              cars."
+            </p>
+            <div class="profile">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop"
+                alt="Customer 5"
+              />
+              <div class="profile-info">
+                <h4>Hans Weber</h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 6 -->
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "Affordable prices without compromising quality. Highly
+              recommend!"
+            </p>
+            <div class="profile">
+              <img
+                src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=60&h=60&fit=crop"
+                alt="Customer 6"
+              />
+              <div class="profile-info">
+                <h4>Maximilian Braun</h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 7 -->
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "They always deliver as promised. Excellent mechanics and friendly
+              staff."
+            </p>
+            <div class="profile">
+              <img
+                src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=60&h=60&fit=crop"
+                alt="Customer 7"
+              />
+              <div class="profile-info">
+                <h4>Stefan Koch</h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 8 -->
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "Jimtex has kept my car in perfect shape for years. I’m a loyal
+              customer."
+            </p>
+            <div class="profile">
+              <img
+                src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=60&h=60&fit=crop"
+                alt="Customer 8"
+              />
+              <div class="profile-info">
+                <h4>Markus Schulz</h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Testimonial 4 (Female) -->
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "They really know their job. My car has been running smoothly since I brought it here."
-        </p>
-        <div class="profile">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&h=60&fit=crop" alt="Customer 4">
-          <div class="profile-info">
-            <h4>Greta Hoffmann</h4>
-            <div class="stars">★★★★★</div>
-          </div>
-        </div>
+        <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
       </div>
-
-      <!-- Testimonial 5 -->
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "Honest, quick, and very skilled. I trust Jimtex with all my cars."
-        </p>
-        <div class="profile">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop" alt="Customer 5">
-          <div class="profile-info">
-            <h4>Hans Weber</h4>
-            <div class="stars">★★★★★</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial 6 -->
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "Affordable prices without compromising quality. Highly recommend!"
-        </p>
-        <div class="profile">
-          <img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=60&h=60&fit=crop" alt="Customer 6">
-          <div class="profile-info">
-            <h4>Maximilian Braun</h4>
-            <div class="stars">★★★★★</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial 7 -->
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "They always deliver as promised. Excellent mechanics and friendly staff."
-        </p>
-        <div class="profile">
-          <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=60&h=60&fit=crop" alt="Customer 7">
-          <div class="profile-info">
-            <h4>Stefan Koch</h4>
-            <div class="stars">★★★★★</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial 8 -->
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "Jimtex has kept my car in perfect shape for years. I’m a loyal customer."
-        </p>
-        <div class="profile">
-          <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=60&h=60&fit=crop" alt="Customer 8">
-          <div class="profile-info">
-            <h4>Markus Schulz</h4>
-            <div class="stars">★★★★★</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
-  </div>
-</section>
-
-<script>
+    </section>
+    <script>
 let currentIndex = 0;
-const visibleCards = 3; // show 3 at once
-const total = document.querySelectorAll('.testimonial-card').length;
-const maxIndex = Math.ceil(total / visibleCards) - 1;
+const slider = document.querySelector(".testimonial-slider");
+const cards = document.querySelectorAll(".testimonial-card");
+const visibleCards = 3; // how many are visible at once
+const totalCards = cards.length;
 
 function moveSlide(direction) {
-  const slider = document.querySelector('.testimonial-slider');
-  currentIndex = (currentIndex + direction + (maxIndex + 1)) % (maxIndex + 1);
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  currentIndex += direction;
+
+  // loop back when reaching end/start
+  if (currentIndex < 0) {
+    currentIndex = totalCards - visibleCards;
+  } else if (currentIndex > totalCards - visibleCards) {
+    currentIndex = 0;
+  }
+
+  const offset = -(currentIndex * (100 / visibleCards));
+  slider.style.transform = `translateX(${offset}%)`;
 }
 
-// Auto-play every 4 seconds
-setInterval(() => moveSlide(1), 4000);
+// Auto-scroll every 4 seconds
+setInterval(() => {
+  moveSlide(1);
+}, 4000);
 </script>
 
 
-<!-- Contact Section -->
-<section class="contact">
-  <h2>Contact Us</h2>
-  <div class="underline"></div>
-  <p class="subtitle">Book an appointment or send us a message</p>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2>Contact Us</h2>
+      <div class="underline"></div>
+      <p class="subtitle">We’re here to answer your questions</p>
 
-  <div class="contact-container">
-    <form class="contact-form">
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-      </div>
+      <div class="contact-container">
+        <!-- Left: Contact Info -->
+        <div class="contact-info">
+          <h2>Contact Us</h2>
+          <p><strong>Jimtex Automobile</strong></p>
 
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-      </div>
+          <p>
+            <i class="fa-solid fa-envelope"></i> Email:
+            <a href="mailto:info@jimtexauto.com">info@jimtexauto.com</a>
+          </p>
+          <p>
+            <i class="fa-solid fa-phone"></i> Phone:
+            <a href="tel:+491234567890">+49 123 456 7890</a>
+          </p>
+          <p>
+            <i class="fa-solid fa-location-dot"></i> Address: Rapsacker Str. 17,
+            23556 Lübeck Germany
+          </p>
 
-      <div class="form-group">
-        <label for="date">Preferred Date</label>
-        <input type="date" id="date" name="date" required>
-      </div>
+          <h3>Why Choose Us?</h3>
+          <ul>
+            <li>✔ Trusted automobile dealer</li>
+            <li>✔ Seamless car shipping & transfer</li>
+            <li>✔ Wide range of cars & trucks</li>
+            <li>✔ Customer-first service</li>
+          </ul>
 
-      <div class="form-group">
-        <label for="time">Preferred Time</label>
-        <input type="time" id="time" name="time" required>
-      </div>
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fb fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands ig fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands wa fa-whatsapp"></i></a>
+          </div>
 
-      <div class="form-group">
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" placeholder="Enter your message" rows="4" required></textarea>
-      </div>
-
-      <button type="submit">Send Message</button>
-    </form>
+          <p class="tagline">🚗 Driven by Trust, Powered by Experience</p>
+          
+        </div>
+     <!-- Map + Directions -->
+<div style="max-width: 600px;  text-align: center;">
+  <!-- Google Map -->
+  <div style="width: 100%; height: 475px; border-radius: 12px; overflow: hidden; margin-bottom:15px;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2294.5889973782597!2d10.617067276285698!3d53.86168273923837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b1f4b3a2a3f39f%3A0x7c1c3260f99a85b1!2sRapsacker%20Str.%2017%2C%2023556%20L%C3%BCbeck%2C%20Germany!5e0!3m2!1sen!2sde!4v1725900000000!5m2!1sen!2sde"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
   </div>
-</section>
 
+<!-- Directions Form -->
+<form onsubmit="getDirections(event)" style="margin-top:10px;">
+  <div style="display: flex; justify-content: flex-start; align-items: center; gap: 8px; flex-wrap: wrap;">
+    <input type="text" id="postalCode" placeholder="Enter your postal code"
+           style="padding:10px; border-radius:6px; border:1px solid #ccc; width:200px;">
+
+    <button type="submit"
+            style="padding:10px 10px; border:none; border-radius:6px; background:orange; 
+                    color: #f44306;font-weight:bold; cursor:pointer; transition: transform 0.2s;">
+      Get Directions
+    </button>
+
+    <button type="button" onclick="getCurrentLocation()"
+            style="padding:10px 13px; border:none; border-radius:6px; background:#000; 
+                   color:orange; font-weight:bold;  cursor:pointer; transition: transform 0.3s; ">
+      Use My Current Location
+    </button>
+  </div>
+</form>
+
+<style>
+  form button:hover {
+    transform: scale(1.06);
+  color: #000;
+  background: white;
+  }
+  form input:focus {
+    outline: none;
+    border-color: orange;
+    transform: scale(1.03);
+    transition: transform 0.2s, border-color 0.2s;
+    
+  }
+</style>
+
+<!-- Your existing script for map + directions -->
+<script>
+  function getDirections(e) {
+    // ... your code ...
+  }
+
+  function getCurrentLocation() {
+    // ... your code ...
+  }
+</script>
+
+<!-- New script for animations -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const contactInfo = document.querySelector(".contact-info");
+  const mapBox = document.querySelector(".contact-container > div:last-child");
+
+  // Run on load
+  contactInfo.classList.add("animate");
+  mapBox.classList.add("animate");
+
+  // Intersection Observer to re-trigger on scroll
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("animate"); // reset
+          void entry.target.offsetWidth; // restart trick
+          entry.target.classList.add("animate");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(contactInfo);
+  observer.observe(mapBox);
+});
+</script>
+
+   </section>
 
     <!-- Footer -->
-    <footer>
-       <div class="footer-content">
-     
-      <div class="py">
-        <div class="one">
-      <div>
-        <h2>Utilities</h2>
-        <ul>
-          <li>Contact Us</li>
-          <li>Privacy Policy</li>
-          <li>Terms of Service</li>
-        </ul>
-      </div>
-     <div>
-       <h2> Pages</h2>
-       <ul>
-         <li>Home</li>
-         <li>About Us</li>  
-         <li>Contact Us</li>
-       </ul>
-       <!-- <P> Home</P>
-       <P> About Us</P>
-       <P> Contact Us</P> -->
-     </div>
-    </div>
-    <div class="two">
-        <h2> Job Homes & Apartments</h2>
-    </div>
-      <div class="three">
-          <H2>Products</H2>
-      </div>
-    </div>
-      </div>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-                
-                <p class="copyright">© 2023 Developer Portfolio. All rights reserved.</p>
-            </div>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Left section -->
+        <div class="footer-about fade-in">
+          <div class="cont" style="display: flex; gap: 10px">
+            <img src="./jimtex.png" alt="" class="logo" width="28%" />
+            <h2 class="logo">Jimtex Automobile</h2>
+          </div>
+          <p>
+            Your trusted partner for quality auto repairs, maintenance, and
+            spare parts. We keep you moving safely and reliably.
+          </p>
+   
         </div>
-    </footer>
 
-  <script src="script.js"></script>
-  <script src="https://kit.fontawesome.com/98fce21c87.js" crossorigin="anonymous"></script>
-</body>
+        <!-- Links -->
+        <div class="footer-links slide-up">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#">Inventory</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links slide-up">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#contact">FAQs</a></li>
+            <li><a href="#contact">Customer Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links slide-up">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+       <div class="social-icons">
+        <h4>Follow Us</h4>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="footer-bottom">
+        <p>© 2025 Jimtex Automobile. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      window.addEventListener("load", function () {
+        document.body.classList.add("loaded");
+      });
+    </script>
+
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/yourcode.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(
+          ".reveal-left, .reveal-right, .hidden-left, .hidden-right"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                if (
+                  entry.target.classList.contains("reveal-left") ||
+                  entry.target.classList.contains("reveal-right")
+                ) {
+                  entry.target.classList.add("active"); // About section
+                }
+                if (
+                  entry.target.classList.contains("hidden-left") ||
+                  entry.target.classList.contains("hidden-right")
+                ) {
+                  entry.target.classList.add("show"); // Contact section
+                }
+              } else {
+                // 🔥 This allows animations to replay when scrolling back
+                entry.target.classList.remove("active", "show");
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        elements.forEach((el) => observer.observe(el));
+      });
+    </script>
+
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/98fce21c87.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

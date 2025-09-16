@@ -206,6 +206,53 @@ body {
   margin-bottom: 2.5rem;
 }
 
+/* H1 slide-in from right (initial state) */
+.hero-content h1 {
+  opacity: 0;
+  transform: translateX(200px); /* start off to the right */
+  transition: transform 3s cubic-bezier(0.22, 0.9, 0.36, 1), opacity 0.6s ease;
+}
+
+/* visible state — when class 'in-view' is added on the container */
+.hero-content.in-view h1 {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.08s;
+}
+
+/* H1 initial state */
+.hero-content h1 {
+  opacity: 0;
+  transform: translateX(100px); /* off to the right */
+  transition: transform 0.8s cubic-bezier(0.22, 0.9, 0.36, 1), opacity 0.6s ease;
+}
+
+/* Paragraph initial state */
+.hero-content .description {
+  opacity: 0;
+  transform: translateX(200px); /* also from right */
+  transition: transform 3s cubic-bezier(0.22, 0.9, 0.36, 1), opacity 0.6s ease;
+}
+
+/* When hero is visible */
+.hero-content.in-view h1 {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.4s; /* start almost immediately */
+}
+
+.hero-content.in-view .description {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.6s; /* comes after the h1 */
+}
+
+.hero-content h1,
+.hero-content .description {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
 /* Buttons wrapper */
 .buttons a {
   display: inline-block;
@@ -331,7 +378,7 @@ body {
 .feature-card {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.8s ease;
+  transition: all 1.3s ease;
 }
 
 .feature-card.show {
@@ -390,7 +437,7 @@ body {
 }
 
 .service {
-  background: #1c1c1c; /* dark card background */
+  background: #1c1c1c;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -400,7 +447,7 @@ body {
   overflow: hidden;
   opacity: 0; /* animation start */
   transform: translateY(30px); /* animation start */
-  transition: scale 0.5s ease;
+  transition: scale 0.8s ease;
 }
 
 .service:before {
@@ -475,6 +522,94 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Start hidden */
+#services .section-title h2,
+#services .service {
+  opacity: 0;
+  transform: translateX(100px); /* start off to the right */
+  transition: transform 1s ease-out, opacity 0.8s ease-out;
+}
+
+/* Animate in when visible */
+#services.in-view .section-title h2 {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+#services.in-view .service:nth-child(1) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.9s;
+}
+#services.in-view .service:nth-child(2) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.9s;
+}
+#services.in-view .service:nth-child(3) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.8s;
+}
+#services.in-view .service:nth-child(4) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 1.5s;
+}
+
+/* === Services: scroll-triggered animation (add after your existing services CSS) === */
+
+/* disable automatic .fade-in-up animation so we control it via the section class */
+#services .fade-in-up {
+  animation: none !important;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* base hidden state (more specific so it overrides earlier rules) */
+#services .section-title h2,
+#services .services-container .service {
+  opacity: 0;
+  transform: translateY(30px); /* slide in from bottom */
+  transition: transform 0.8s cubic-bezier(0.22, 0.9, 0.36, 1), opacity 0.6s ease;
+  will-change: transform, opacity;
+}
+
+/* when the section gets the .in-view class, animate them in with staggered delays */
+#services.in-view .section-title h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+/* stagger each card (works with your grid/wrap layout) */
+#services.in-view .services-container .service:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.35s;
+}
+#services.in-view .services-container .service:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.55s;
+}
+#services.in-view .services-container .service:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.75s;
+}
+#services.in-view .services-container .service:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.95s;
+}
+
+/* small nicety: reduce flicker when removing/adding class quickly */
+#services .services-container .service {
+  backface-visibility: hidden;
 }
 
 /* About Us Section */
@@ -552,6 +687,60 @@ body {
 .about-text .btn-primary:hover {
   background: #000;
   transform: scale(1.1);
+}
+
+/* Initial hidden state */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s ease; /* smooth & slower animation */
+}
+
+/* Active state when scrolled into view */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image comes from the left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 1.2s ease;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Text comes from the right */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 1.2s ease;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hidden-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+
+.hidden-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Testimonials Section */
@@ -671,7 +860,7 @@ body {
 /* Contact Section */
 .contact {
   padding: 60px 20px;
-  background: #f7f7f7; /* Light grey background */
+  background: #f7f7f7;
   text-align: center;
 }
 
@@ -696,141 +885,341 @@ body {
 }
 
 .contact-container {
-  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1100px;
   margin: auto;
+  align-items: start;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-group {
-  text-align: left;
-}
-
-.form-group label {
-  display: block;
-  font-size: 0.95rem;
-  margin-bottom: 6px;
-  color: #333;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
+.contact-info {
+  padding: 20px;
   background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info h2 {
+  font-size: 1.8rem;
+  color: #0a1a3c;
+  margin-bottom: 15px;
+}
+
+.contact-info p,
+.contact-info li {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info ul li {
+  margin-bottom: 6px;
+}
+
+.contact-info a {
+  color: #e6610f;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 1.3rem;
+  color: #0a1a3c;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #e6610f;
+}
+.fb {
+  color: #1c1c1c;
+}
+.fb:hover {
+  color: #1877f2;
+}
+.ig {
+  color: #1c1c1c;
+}
+.ig:hover {
+  color: #8134af;
+}
+
+.wa {
+  color: #1c1c1c;
+}
+.wa:hover {
+  color: #25d366;
+}
+.contact-info .tagline {
+  margin-top: 15px;
+  font-style: italic;
+  font-weight: 600;
+  color: #e6610f;
+}
+
+/* Map */
+.map-container {
+  width: 100%;
+}
+
+.directions-box {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.directions-box label {
+  width: 100%;
+  font-weight: 600;
   color: #333;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: orange;
-  outline: none;
+.directions-box input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
-button {
-  background: orange;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 12px;
+.directions-box button {
+  padding: 10px 20px;
+  background: #e6610f;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
-button:hover {
-  background: #e69500;
+.directions-box button:hover {
+  background: #c94e0a;
+}
+
+/* Responsive (mobile stacking) */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .map {
+    min-height: 250px;
+  }
+}
+/* === Animations === */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Initial state (hidden) */
+.contact-info,
+.contact-container > div:last-child {
+  opacity: 0;
+  transform: translateX(0); /* reset */
+}
+
+/* Animated states */
+.contact-info.animate {
+  animation: slideInLeft 3s ease forwards;
+}
+
+.contact-container > div:last-child.animate {
+  animation: slideInRight 3s ease forwards;
 }
 
 /* Footer */
-footer {
-  background: #000;
-  color: white;
-  text-align: center;
-  padding: 60px 0 30px;
+.footer {
+  background: #000000; /* dark navy */
+  color: #ccc;
+  padding: 60px 20px 30px;
+  font-family: Arial, sans-serif;
 }
 
-.footer-content {
-  max-width: 600px;
-  margin: 0 auto;
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.footer-content .logo {
-  color: white;
+.footer-about .logo {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.footer-about p {
+  font-size: 0.95rem;
   margin-bottom: 20px;
-  display: inline-block;
+  color: #aaa;
+}
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
 }
 
-.footer-links {
-  display: flex;
-  justify-content: center;
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-links ul li {
   list-style: none;
-  margin: 30px 0;
+  font-style: italic;
 }
 
-.footer-links li {
-  margin: 0 15px;
-}
-
-.footer-links a {
-  color: rgba(255, 255, 255, 0.7);
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: white;
-}
-
-.social-links {
-  margin-bottom: 30px;
-}
-
-.social-links a {
+/* Social Icons Hover Pulse */
+.social-icons a {
+  color: #ccc;
+  margin-right: 12px;
+  font-size: 1.4rem;
   display: inline-block;
-  width: 45px;
-  height: 45px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border-radius: 50%;
-  line-height: 45px;
-  margin: 0 10px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.social-links a:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--primary);
-  border-radius: 50%;
-  transform: scale(0);
-  transition: transform 0.3s ease;
-  z-index: -1;
+.social-icons a:hover {
+  color: orange;
+  transform: scale(1.2);
+  animation: pulse 0.6s;
 }
 
-.social-links a:hover:before {
-  transform: scale(1);
+.footer-bottom {
+  margin-top: 10px;
+  text-align: center;
 }
 
-.social-links a:hover {
-  transform: translateY(-5px);
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1.2);
+  }
 }
 
-.copyright {
-  color: rgba(255, 255, 255, 0.6);
-  margin-top: 30px;
-  font-size: 0.9rem;
+/* Animation Base State */
+.fade-in,
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Trigger animations on page load */
+body.loaded .fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+body.loaded .slide-up {
+  animation: slideUp 1s forwards;
+}
+
+/* Keep the staggered delay for links */
+.footer-links:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.footer-links:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.footer-links:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.footer-links:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-links:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.footer-links:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.footer-links:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.footer-links:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-links h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
