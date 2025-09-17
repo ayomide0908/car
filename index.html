@@ -407,47 +407,26 @@
       </div>
     </section>
     <script>
-let currentIndex = 0;
-const slider = document.querySelector(".testimonial-slider");
-const cards = document.querySelectorAll(".testimonial-card");
-const visibleCards = 1; // how many are visible at once
-const totalCards = cards.length;
+    let currentIndex = 0;
+    const slider = document.querySelector(".testimonial-slider");
+    const cards = document.querySelectorAll(".testimonial-card");
+    const visibleCards = 3; // desktop
+    const totalCards = cards.length;
 
-function moveSlide(direction) {
-  currentIndex += direction;
+    function moveSlide(direction) {
+      if (window.innerWidth <= 768) return; // disable on mobile
 
-  // loop back when reaching end/start
-  if (currentIndex < 0) {
-    currentIndex = totalCards - visibleCards;
-  } else if (currentIndex > totalCards - visibleCards) {
-    currentIndex = 0;
-  }
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = totalCards - visibleCards;
+      else if (currentIndex > totalCards - visibleCards) currentIndex = 0;
 
-  const offset = -(currentIndex * (100 / visibleCards));
-  slider.style.transform = `translateX(${offset}%)`;
-}
-
-// Auto-scroll every 4 seconds
-setInterval(() => {
-  moveSlide(1);
-}, 4000);
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.querySelector(".testimonial-slider");
-  if (slider) {
-    const firstCard = slider.querySelector(".testimonial-card");
-    if (firstCard) {
-      // Scroll smoothly so the first card is centered
-      const offset = firstCard.offsetLeft - (slider.offsetWidth - firstCard.offsetWidth) / 2;
-      slider.scrollTo({
-        left: offset,
-        behavior: "smooth"
-      });
+      const offset = -(currentIndex * (100 / visibleCards));
+      slider.style.transform = `translateX(${offset}%)`;
     }
-  }
-});
-</script>
+
+    // Auto-scroll every 4s on desktop
+    setInterval(() => moveSlide(1), 4000);
+    </script>
 
 
     <!-- Contact Section -->
