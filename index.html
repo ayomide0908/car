@@ -615,11 +615,58 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>© 2025 Jimtex Automobile. All rights reserved.</p>
       </div>
     </footer>
-    <script>
-      window.addEventListener("load", function () {
-        document.body.classList.add("loaded");
-      });
-    </script>
+<script>
+  // Page load animation trigger
+  window.addEventListener("load", function () {
+    document.body.classList.add("loaded");
+  });
+
+  // Scroll-based animations
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(
+      ".reveal-left, .reveal-right, .hidden-left, .hidden-right, .fade-in, .slide-up"
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // About section animations
+            if (
+              entry.target.classList.contains("reveal-left") ||
+              entry.target.classList.contains("reveal-right")
+            ) {
+              entry.target.classList.add("active");
+            }
+
+            // Contact section animations
+            if (
+              entry.target.classList.contains("hidden-left") ||
+              entry.target.classList.contains("hidden-right")
+            ) {
+              entry.target.classList.add("show");
+            }
+
+            // Footer animations
+            if (
+              entry.target.classList.contains("fade-in") ||
+              entry.target.classList.contains("slide-up")
+            ) {
+              entry.target.classList.add("visible");
+            }
+          } else {
+            // Replay animations when scrolling back
+            entry.target.classList.remove("active", "show", "visible");
+          }
+        });
+      },
+      { threshold: 0.2 } // Trigger when 20% of element is visible
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>
+
 
     <!-- Font Awesome Icons -->
     <script

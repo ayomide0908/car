@@ -1100,6 +1100,7 @@ body {
 .footer-links ul li {
   list-style: none;
   font-style: italic;
+  font-size: 13px;
 }
 
 /* Social Icons Hover Pulse */
@@ -1133,35 +1134,33 @@ body {
     transform: scale(1.2);
   }
 }
-
 /* Animation Base State */
 .fade-in,
 .slide-up {
   opacity: 0;
   transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Trigger animations on page load */
-body.loaded .fade-in {
-  animation: fadeIn 1s forwards;
+/* Triggered on scroll */
+.fade-in.visible,
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-body.loaded .slide-up {
-  animation: slideUp 1s forwards;
+/* Staggered delay for footer links */
+.footer-links:nth-child(2).visible {
+  transition-delay: 0.2s;
 }
-
-/* Keep the staggered delay for links */
-.footer-links:nth-child(2) {
-  animation-delay: 0.2s;
+.footer-links:nth-child(3).visible {
+  transition-delay: 0.4s;
 }
-.footer-links:nth-child(3) {
-  animation-delay: 0.4s;
+.footer-links:nth-child(4).visible {
+  transition-delay: 0.6s;
 }
-.footer-links:nth-child(4) {
-  animation-delay: 0.6s;
-}
-.footer-links:nth-child(5) {
-  animation-delay: 0.8s;
+.footer-links:nth-child(5).visible {
+  transition-delay: 0.8s;
 }
 
 @keyframes fadeIn {
