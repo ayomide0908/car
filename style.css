@@ -16,6 +16,17 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
 
 body {
   line-height: 1.6;
@@ -254,6 +265,9 @@ body {
 }
 
 /* Buttons wrapper */
+.buttons {
+  display: flex;
+}
 .buttons a {
   display: inline-block;
   padding: 12px 24px;
@@ -1220,5 +1234,169 @@ body {
   .footer-links h4::after {
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+/* Hamburger button (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001; /* keeps it above nav */
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #ffffff; /* change to white if dark background */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* When active, turn into "X" */
+.navbar.active .menu-toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.navbar.active .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+.navbar.active .menu-toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* MOBILE STYLES */
+@media (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 5px 20px;
+  }
+  .menu-toggle {
+    display: flex; /* show hamburger */
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    padding: 15px;
+    right: 0;
+    background: #fff; /* menu bg color */
+    flex-direction: column;
+    width: 220px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar.active .nav-links {
+    max-height: 100vh; /* always enough space */
+    padding: 15px;
+  }
+
+  .nav-links li {
+    text-align: left;
+    padding: 12px 18px;
+  }
+
+  .btn {
+    display: none; /* hide big button on small screen */
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    max-height: 0; /* start hidden */
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: 0 0 12px 12px;
+    margin-top: 0;
+    padding: 0 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: max-height 0.5s ease; /* smooth expand */
+  }
+
+  .navbar.active .nav-links {
+    max-height: 800px; /* enough room for all links */
+    padding: 15px; /* padding only when opened */
+  }
+  .nav-links {
+    overflow-y: auto;
+  }
+  .nav-links li {
+    text-align: center;
+    margin: 12px 0;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    background: #222;
+  }
+
+  /* HERO */
+  .buttons {
+    display: flex;
+  }
+  a.btn-primary {
+    padding: 5px 9px;
+  }
+  /* testimonial */
+  /* Mobile: show 1 per view */
+  @media (max-width: 600px) {
+    .testimonial-card {
+      flex: 0 0 100%; /* 1 per row */
+    }
+    .testimonial-slider {
+      width: calc(100% * 8); /* full width for each card */
+    }
+  }
+  .testimonial-card {
+    flex: 0 0 calc(100% / 3); /* 3 per view */
+    background: #111;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    text-align: left;
+    margin: 0 8px;
+  }
+  .testimonial-wrapper {
+    overflow: visible; /* show full content */
+  }
+
+  .testimonial-card {
+    flex: 0 0 auto;
+    width: 80%; /* smaller than screen */
+    max-width: 320px;
+    margin: 0 10px;
+  }
+  .testimonial-wrapper {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .testimonial-slider {
+    display: flex;
+  }
+
+  .testimonial-card {
+    flex: 0 0 80%;
+    max-width: 320px;
+    scroll-snap-align: center;
   }
 }

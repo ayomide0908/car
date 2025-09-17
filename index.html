@@ -20,18 +20,28 @@
     <!-- Navigation -->
     <header>
       <nav class="navbar">
-        <div class="logo"><img src="./jimtex.png" alt="" width="23%" /></div>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#">Inventory</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About us</a></li>
-          <li><a href="#contact">Contact us</a></li>
-        </ul>
-        <a href="#contact" class="btn"
-          ><i class="fa-solid fa-calendar-days"></i> Schedule a Test Drive
-        </a>
-      </nav>
+  <div class="logo"><img src="./jimtex.png" alt="" width="23%" /></div>
+  
+  <!-- Hamburger Icon (only visible on mobile) -->
+  <div class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#">Inventory</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About us</a></li>
+    <li><a href="#contact">Contact us</a></li>
+  </ul>
+  
+  <a href="#contact" class="btn">
+    <i class="fa-solid fa-calendar-days"></i> Schedule a Test Drive
+  </a>
+</nav>
+
     </header>
 
     <!-- Hero Section -->
@@ -400,7 +410,7 @@
 let currentIndex = 0;
 const slider = document.querySelector(".testimonial-slider");
 const cards = document.querySelectorAll(".testimonial-card");
-const visibleCards = 3; // how many are visible at once
+const visibleCards = 1; // how many are visible at once
 const totalCards = cards.length;
 
 function moveSlide(direction) {
@@ -421,6 +431,22 @@ function moveSlide(direction) {
 setInterval(() => {
   moveSlide(1);
 }, 4000);
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector(".testimonial-slider");
+  if (slider) {
+    const firstCard = slider.querySelector(".testimonial-card");
+    if (firstCard) {
+      // Scroll smoothly so the first card is centered
+      const offset = firstCard.offsetLeft - (slider.offsetWidth - firstCard.offsetWidth) / 2;
+      slider.scrollTo({
+        left: offset,
+        behavior: "smooth"
+      });
+    }
+  }
+});
 </script>
 
 
@@ -484,7 +510,7 @@ setInterval(() => {
 
 <!-- Directions Form -->
 <form onsubmit="getDirections(event)" style="margin-top:10px;">
-  <div style="display: flex; justify-content: flex-start; align-items: center; gap: 8px; flex-wrap: wrap;">
+  <div style="display: flex; justify-content: flex-start; align-items: center; gap: 8px; flex-wrap: wrap; " class="cont">
     <input type="text" id="postalCode" placeholder="Enter your postal code"
            style="padding:10px; border-radius:6px; border:1px solid #ccc; width:200px;">
 
@@ -707,6 +733,54 @@ document.addEventListener("DOMContentLoaded", () => {
         elements.forEach((el) => observer.observe(el));
       });
     </script>
+    <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navbar = document.querySelector('.navbar');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  // Toggle menu
+  menuToggle.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+  });
+
+  // Auto-close menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navbar.classList.remove('active');
+    });
+  });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".navbar");
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault(); // stop default jump
+
+      const targetId = link.getAttribute("href").substring(1);
+      const target = document.getElementById(targetId);
+
+      if (target) {
+        const navbarHeight = navbar.offsetHeight; // measure navbar height
+        const elementPosition = target.offsetTop;
+        const offsetPosition = elementPosition - navbarHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+
+        // ✅ close hamburger menu after clicking (on mobile)
+        document.querySelector(".navbar").classList.remove("active");
+      }
+    });
+  });
+});
+</script>
+
+
 
     <script src="script.js"></script>
     <script
